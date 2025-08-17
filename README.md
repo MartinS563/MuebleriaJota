@@ -1,4 +1,4 @@
-# 🪑 Mueblería Hermanos Jota - E-commerce (Sprint 1 y 2)
+# 🪑 Mueblería Hermanos Jota - E-commerce
 
 ## 📌 Descripción
 Este proyecto corresponde a la primera entrega del desarrollo de la plataforma de e-commerce para **Mueblería Hermanos Jota**.  
