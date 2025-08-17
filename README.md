@@ -18,13 +18,6 @@ El sitio incluye:
 - [ ]  
 - [ ]  
 
-## 🎯 Objetivos de Aprendizaje
-- Estructurar un sitio web con **HTML5 semántico**.  
-- Aplicar estilos y diseño responsivo con **CSS3 (Flexbox y Mobile-First)**.  
-- Implementar interactividad y manipulación del DOM con **JavaScript**.  
-- Simular carga de datos asíncrona con **Promises / async-await**.  
-- Manejar flujo de trabajo en equipo con **Git y GitHub**.  
-
 ## 🛠️ Tecnologías utilizadas
 - HTML5  
 - CSS3 (Flexbox, Mobile-First)  
