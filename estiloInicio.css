@@ -1,0 +1,68 @@
+/* 🌐 Reset básico y buenas prácticas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🟢 Variables globales */
+:root {
+  /* Colores Hermanos Jota */
+  --burnt-sienna: #a0522d;
+  --sage-green: #87a96b;
+  --warm-alabaster: #f5e6d3;
+  --goldenrod: #d4a437;
+  --dusty-rose: #c47a6d;
+  --dark-wood: #3e2723;
+  --light-grey: #f5f5f5;
+
+  /* Tipografías */
+  --font-body: "Inter", sans-serif;
+  --font-titles: "Playfair Display", serif;
+}
+
+/* 🖋️ Tipografía base */
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background-color: var(--warm-alabaster);
+  color: var(--dark-wood);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🔠 Títulos */
+h1,
+h2,
+h3 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  color: var(--burnt-sienna);
+}
+
+/* 🔗 Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🖼️ Imágenes */
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔘 Botones y formularios */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
