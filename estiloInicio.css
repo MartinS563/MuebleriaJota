@@ -9,7 +9,7 @@
 
 /* 🟢 Variables globales */
 :root {
-  /* Colores Hermanos Jota */
+  /* 🎨 Colores Hermanos Jota */
   --burnt-sienna: #a0522d;
   --sage-green: #87a96b;
   --warm-alabaster: #f5e6d3;
@@ -18,7 +18,7 @@
   --dark-wood: #3e2723;
   --light-grey: #f5f5f5;
 
-  /* Tipografías */
+  /* 🖋️ Tipografías */
   --font-body: "Inter", sans-serif;
   --font-titles: "Playfair Display", serif;
 }
@@ -65,4 +65,11 @@ select {
   border: none;
   outline: none;
   background: none;
+}
+
+/* 📋 Listas */
+ul,
+ol {
+  list-style: none; /* quita viñetas y números */
+  padding: 0; /* quita el sangrado izquierdo */
 }
