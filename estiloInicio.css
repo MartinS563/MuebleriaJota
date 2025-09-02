@@ -10,13 +10,13 @@
 /* 🟢 Variables globales */
 :root {
   /* 🎨 Colores Hermanos Jota */
-  --burnt-sienna: #a0522d;
-  --sage-green: #87a96b;
-  --warm-alabaster: #f5e6d3;
-  --goldenrod: #d4a437;
-  --dusty-rose: #c47a6d;
-  --dark-wood: #3e2723;
-  --light-grey: #f5f5f5;
+  --color-sienna: #a0522d;
+  --color-salvia: #87a96b;
+  --color-alabastro: #f5e6d3;
+  --color-oro: #d4a437;
+  --color-rosa: #c47a6d;
+  --color-darkwood: #3e2723;
+  --color-grey: #f5f5f5;
 
   /* 🖋️ Tipografías */
   --font-body: "Inter", sans-serif;
@@ -26,9 +26,10 @@
 /* 🖋️ Tipografía base */
 body {
   font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.5;
-  background-color: var(--warm-alabaster);
-  color: var(--dark-wood);
+  background-color: var(--color-alabastro);
+  color: var(--color-darkwood);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,7 +39,7 @@ h2,
 h3 {
   font-family: var(--font-titles);
   font-weight: 700;
-  color: var(--burnt-sienna);
+  color: var(--color-sienna);
 }
 
 /* 🔗 Links */
@@ -70,6 +71,10 @@ select {
 /* 📋 Listas */
 ul,
 ol {
-  list-style: none; /* quita viñetas y números */
-  padding: 0; /* quita el sangrado izquierdo */
+  list-style: none;
+  padding: 0;
 }
+
+/* ------------------------------
+   Header
+------------------------------ */
