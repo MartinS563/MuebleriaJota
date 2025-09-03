@@ -5,12 +5,12 @@ Debe tener validación del lado del cliente con JavaScript.
 Al enviar, debe mostrar un mensaje de éxito en la página usando manipulación del DOM -->
 
 <!DOCTYPE html>
-<html lang="es>
+<html lang="es">
 <head>
-    <meta charset=" UTF-8">
+    <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto</title>
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estiloContacto.css">
 </head>
 
 
@@ -28,30 +28,31 @@ Al enviar, debe mostrar un mensaje de éxito en la página usando manipulación 
 <body>
     <section>
         <h1 id="titulo-contacto">
-            Enviar una consulta
+            ENVIAR UNA CONSULTA
         </h1>
         <h4 class="subtitulo-contacto">
-            ¡Estamos aquí para ayudarte! Queremos escucharte y resolver tus dudas.
+            Estamos aquí para escucharte y acompañarte, con la misma dedicación con la que damos forma a cada pieza.
         </h4>
         <h4 class="subtitulo-contacto">
-            Dejanos tus preguntas o cualquier inconveniente que tengas aquí abajo y nos contactaremos contigo.
+            Compartinos tus dudas o inquietudes aquí abajo y nos pondremos en contacto para resolverlas juntos.
         </h4>
     </section>
     <main>
-        <form action="/enviar-contacto" method="POST">
+        <form id="formularioContacto">
             <div>
                 <label for="nombreUsuario">NOMBRE</label>
-                <input type="text" id="nombreUsuario" name="nombre" required>
+                <input type="text" id="nombreUsuario" name="nombre">
             </div>
             <div>
                 <label for="emailUsuario">CORREO ELECTRÓNICO</label>
-                <input type="email" id="emailUsuario" name="email" required>
+                <input type="text" id="emailUsuario" name="email">
             </div>
             <div>
                 <label for="mensajeUsuario">MENSAJE</label>
-                <textarea id="mensajeUsuario" name="mensaje" rows="5" required></textarea>
+                <textarea id="mensajeUsuario" name="mensaje" rows="5"></textarea>
             </div>
             <button type="submit">ENVIAR</button>
+            <script src="validacionContacto.js"></script>
         </form>
     </main>
 </body>
