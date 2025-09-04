@@ -14,7 +14,7 @@ El sitio incluye:
 ## 👥 Integrantes
 - [Martin Alejandro Soria]  
 - [David Shih]  
-- [ ]  
+- [Johana Salgueiro ]  
 - [ ]  
 - [ ]  
 
