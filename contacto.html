@@ -14,19 +14,20 @@ Al enviar, debe mostrar un mensaje de éxito en la página usando manipulación 
     <link rel="stylesheet" href="estiloContacto.css">
 </head>
 
-
-<header>
-    <h1>MUEBLERIA HERMANOS JOTA</h1> <!-- TEMPORAL -->
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li> <!-- TEMPORAL -->
-            <li><a href="#">Acerca de</a></li> <!-- TEMPORAL -->
-            <li><a href="#">Contacto</a></li> <!-- TEMPORAL -->
-        </ul>
-    </nav>
-</header>
-
 <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar">
+        <img src="assets/logo.svg" alt="Logo Hermanos Jota" class="logo"/>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Catálogo</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+          <li><a href="producto.html">🛒<i class="fa-solid fa-cart-shopping"></i><span id="texto-carrito">Carrito</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
     <section>
         <h1 id="titulo-contacto">
             ENVIAR UNA CONSULTA
@@ -62,10 +63,22 @@ Al enviar, debe mostrar un mensaje de éxito en la página usando manipulación 
             </div>
     </main>
     <script src="validacionContacto.js"></script>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__info">
+        <p>&copy; 2025 Hermanos Jota - Todos los derechos reservados</p>
+        <p>
+          Contacto:
+          <a href="mailto:brand@hermanosjota.com">brand@hermanosjota.com</a>
+        </p>
+      </div>
+      <div class="footer__social">
+        <a href="#">Instagram</a> | <a href="#">Facebook</a>
+      </div>
+    </footer>
+
+    <script src="productos.js"></script>
+    <script src="main.js"></script>
 </body>
-
-<footer>
-    Pie de Pagina &copy; 2025
-</footer>
-
 </html>

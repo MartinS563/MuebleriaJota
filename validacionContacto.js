@@ -14,9 +14,15 @@ formularioContacto.addEventListener('submit', function(event) {
 
   let errores = [];
 
+  // Validacion de nombre
   if (!nombre) errores.push('Nombre no completado.');
+  else if (nombre.length < 3) errores.push('El nombre debe tener al menos 3 caracteres.');
+
+  // Validacion de email
   if (!email) errores.push('Email no completado.');
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errores.push('Correo electrónico inválido.'); // El email debe contener caracteres válidos + arroba + caracteres válidos + punto + caracteres válidos
+
+  // Validacion de mensaje
   if (!mensaje) errores.push('Mensaje no completado.');
 
   if (errores.length > 0) {

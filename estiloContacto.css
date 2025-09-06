@@ -32,6 +32,50 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+header {
+    max-width: 100%;
+    background-color: var(--color-sienna);
+}
+
+.navbar {
+    max-width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.logo {
+    width: 45px;
+    height: 45px;
+    margin: 10px 40px 10px 10px; 
+    background-color: var(--color-grey);
+    border-radius: 12px;
+}
+.navbar ul {
+    flex:4;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px;
+    font-weight: 700;
+}
+.navbar ul li {
+    padding: 10px 15px;
+}
+a {
+    text-decoration: none;
+    color: var(--color-grey);
+    transition: transform 0.1s ease;
+    display: inline-block;
+}
+
+header .navbar ul li a:hover {
+    color: var(--color-alabastro);
+    transform: scale(1.2);
+}
+
+.active {
+    text-decoration: underline;
+}
+
 #titulo-contacto, .subtitulo-contacto {
   text-align: center;
   justify-content: center;
@@ -143,6 +187,14 @@ button {
 }
 #cerrarMensaje:hover {
   color: red;
+}
+
+footer {
+  background-color: var(--color-sienna);
+  color: var(--color-grey);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
 }
 
 @keyframes aparecer {
