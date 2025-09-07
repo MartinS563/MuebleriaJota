@@ -15,7 +15,7 @@ El sitio incluye:
 - [Martin Alejandro Soria]  
 - [David Shih]  
 - [Johana Salgueiro ]  
-- [ ]  
+- [Valentina Rivarola]  
 - [ ]  
 
 ## 🛠️ Tecnologías utilizadas
