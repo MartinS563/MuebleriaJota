@@ -1,0 +1,26 @@
+/*Estilos carrito */
+.header__cart {
+  margin-left: 20px;
+}
+
+.cart__btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-grey);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+#cart-count {
+  background-color: var(--color-oro);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+}
