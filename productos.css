@@ -112,16 +112,20 @@ header .navbar ul li a:hover {
   object-fit: cover;
 }
 
+strong {
+  display: block;   /* ahora se comporta como un bloque */
+  margin-bottom: 1px; /* agrega espacio con el botón */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 /*FIN de Prductos - Catalogo*/
 
 /* ------------------------------
    Footer
 ------------------------------ */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 footer {
   background-color: var(--color-sienna);
   color: var(--color-grey);
