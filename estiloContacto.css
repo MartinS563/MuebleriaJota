@@ -45,20 +45,20 @@ header {
 .logo {
     width: 45px;
     height: 45px;
-    margin: 10px 40px 10px 10px; 
+    margin: 10px;
     background-color: var(--color-grey);
     border-radius: 12px;
 }
 .navbar ul {
-    flex:4;
+    flex: 4;
     display: flex;
     justify-content: space-between;
     list-style: none;
     padding: 10px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
 }
 .navbar ul li {
-    padding: 10px 15px;
+  align-self: center;
 }
 a {
     text-decoration: none;
@@ -148,6 +148,11 @@ button {
   letter-spacing: 0.08em;
   border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-oro);
 }
 
 #mensajeExito {
@@ -204,6 +209,9 @@ footer {
 
 /* Media Query para pantallas más grandes (el breakpoint es 768px) */
 @media (min-width: 768px) {
+  .logo {
+    margin: 10px 80px 10px 10px; 
+  }
   form label {
     width: 500px;    
     max-width: none;

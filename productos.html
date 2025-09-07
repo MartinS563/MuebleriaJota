@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo</title>
-    <link rel="stylesheet" href="catalogo.css">
+    <link rel="stylesheet" href="productos.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header__logo">
-            <img src="assets/logo.svg" alt="Logo Hermanos Jota" />
-        </div>
-        <nav class="header__nav">
-            <ul class="nav__list">
-                <li><a href="index.html" class="nav__link">Inicio</a></li>
-                <li><a href="productos.html" class="nav__link">Catálogo</a></li>
-                <li><a href="contacto.html" class="nav__link">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="header__cart">
-            <button class="cart__btn">🛒 <span id="cart-count">0</span></button>
-        </div>
-        <button class="header__toggle" aria-label="Abrir menú">☰</button>
+    <header>
+      <nav class="navbar">
+        <img src="assets/logo.svg" alt="Logo Hermanos Jota" class="logo"/>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" class="active">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="carrito.html">🛒<i class="fa-solid fa-cart-shopping"></i><span id="texto-carrito">Carrito</span></a></li>
+        </ul>
+      </nav>
     </header>
     <main id="catalogo" class="grid">
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__info">
+        <p>&copy; 2025 Hermanos Jota - Todos los derechos reservados</p>
+        <p>
+          Contacto:
+          <a href="mailto:brand@hermanosjota.com">brand@hermanosjota.com</a>
+        </p>
+      </div>
+      <div class="footer__social">
+        <a href="#">Instagram</a> | <a href="#">Facebook</a>
+      </div>
+    </footer>
     <script type=module src="./js/main.js"></script> 
 </body>
 </html>

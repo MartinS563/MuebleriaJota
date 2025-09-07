@@ -17,21 +17,16 @@
 
   <body>
     <!-- Header -->
-    <header class="header">
-      <div class="header__logo">
-        <img src="assets/logo.svg" alt="Logo Hermanos Jota" />
-      </div>
-      <nav class="header__nav">
-        <ul class="nav__list">
-          <li><a href="index.html" class="nav__link">Inicio</a></li>
-          <li><a href="productos.html" class="nav__link">Catálogo</a></li>
-          <li><a href="contacto.html" class="nav__link">Contacto</a></li>
+    <header>
+      <nav class="navbar">
+        <img src="assets/logo.svg" alt="Logo Hermanos Jota" class="logo"/>
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="productos.html">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="carrito.html">🛒<i class="fa-solid fa-cart-shopping"></i><span id="texto-carrito">Carrito</span></a></li>
         </ul>
       </nav>
-      <div class="header__cart">
-        <button class="cart__btn">🛒 <span id="cart-count">0</span></button>
-      </div>
-      <button class="header__toggle" aria-label="Abrir menú">☰</button>
     </header>
 
     <!-- Hero Banner -->

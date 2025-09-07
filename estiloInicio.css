@@ -21,6 +21,11 @@
   /* 🖋️ Tipografías */
   --font-body: "Inter", sans-serif;
   --font-titles: "Playfair Display", serif;
+  
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 400;
+  --font-weight-bold: 700;
 }
 
 /* 🖋️ Tipografía base */
@@ -38,7 +43,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-titles);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-sienna);
 }
 
@@ -72,9 +77,69 @@ select {
 ul,
 ol {
   list-style: none;
-  padding: 0;
 }
 
 /* ------------------------------
    Header
 ------------------------------ */
+header {
+    max-width: 100%;
+    background-color: var(--color-sienna);
+}
+
+.navbar {
+    max-width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.logo {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    background-color: var(--color-grey);
+    border-radius: 12px;
+}
+.navbar ul {
+    flex: 4;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px;
+    font-weight: var(--font-weight-bold);
+}
+.navbar ul li {
+  align-self: center;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--color-grey);
+    transition: transform 0.1s ease;
+    display: inline-block;
+}
+
+header .navbar ul li a:hover {
+    color: var(--color-alabastro);
+    transform: scale(1.2);
+}
+
+.navbar a.active {
+    text-decoration: underline;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+footer {
+  background-color: var(--color-sienna);
+  color: var(--color-grey);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Media Query para pantallas más grandes (el breakpoint es 768px) */
+@media (min-width: 768px) {
+  .logo {
+    margin: 10px 80px 10px 10px; 
+  }
+}

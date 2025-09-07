@@ -23,7 +23,7 @@ export function cargarCatalogo(productos){
         
         const boton = document.createElement("button")
         boton.textContent= "Ver mas"
-        boton.addEventListener("click", () => window.location.href= "detalle.html?id=${producto.id}" )
+        boton.addEventListener("click", () => window.location.href= `detalle.html?id=${p.id}` )
 
         div.appendChild(img)
         div.appendChild(h2)
