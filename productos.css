@@ -80,46 +80,43 @@ header .navbar ul li a:hover {
 
 /*Prductos - Catalogo-------------------*/
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    height: auto;
-    margin: 20px auto;
-    padding: 30px 20px;
+#catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.card{
-    border: 1px solid #ddd;
+
+.card {
+  width: 300px;
+  margin: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
   border-radius: 8px;
+  box-shadow: 0 2px 5px;
   text-align: center;
-  background: #fff;
-  transition: transform 0.2s ease;
-  padding: 20px 10px;
-  max-width: 350px;
-  min-width: 120px;
-  /* max-height: 350px; */
-  min-height: 400px;
-  margin: auto;
 }
-.card:hover {
-  transform: scale(1.03);
+.card h2 {
+  font-size: "Inter", sans-serif;
+  color: #a0522d;
+  margin-bottom: 10px;
 }
-.card img {
-  width: 80%;
-  border-radius: 8px;
+
+.card img{
+  max-width: 100%;
   height: auto;
-  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-strong {
-  display: block;   /* ahora se comporta como un bloque */
-  margin-bottom: 1px; /* agrega espacio con el botón */
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+.card button{
+display: inline-block;
+padding: 10px 15px;
+background-color: #87a96b;
+color: #f5f5f5;
+border-color:#f5e6d3;
+text-decoration: none;
+border-radius: 5px;
+margin-top: 10px;
+margin-left: 10px;
 }
 /*FIN de Prductos - Catalogo*/
 
