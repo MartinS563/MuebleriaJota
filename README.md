@@ -16,7 +16,7 @@ El sitio incluye:
 - [David Shih]  
 - [Johana Salgueiro ]  
 - [Valentina Rivarola]  
-- [ ]  
+- [Silva Enzo]  
 
 ## 🛠️ Tecnologías utilizadas
 - HTML5  
