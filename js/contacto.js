@@ -1,12 +1,14 @@
-function mostrarMensajeExito() {
+export function mostrarMensajeExito() {
   const mensaje = document.getElementById("mensajeExito");
   mensaje.style.display = "flex"; // lo muestra como overlay
 }
 
-const formularioContacto = document.getElementById('formularioContacto');
+export function ocultarMensajeExito() {
+  const mensaje = document.getElementById("mensajeExito");
+  mensaje.style.display = "none"; // lo oculta
+}
 
-formularioContacto.addEventListener('submit', function(event) {
-  event.preventDefault(); // Evita que se envíe el formulario y se recargue la página
+export function validarFormulario(formulario) {
 
   const nombre = document.getElementById('nombreUsuario').value.trim();
   const email = document.getElementById('emailUsuario').value.trim();
@@ -28,13 +30,7 @@ formularioContacto.addEventListener('submit', function(event) {
   if (errores.length > 0) {
         let mensajeError = errores.join('\n'); // Concatena los errores en un solo mensaje separado por saltos de línea
         alert(mensajeError);
-        return;
-    } else {
-        mostrarMensajeExito(); // Si todo es válido, muestra un mensaje de éxito
-        formularioContacto.reset();
+        return false;
     }
-});
-
-document.getElementById("cerrarMensaje").addEventListener("click", () => {
-    document.getElementById("mensajeExito").style.display = "none";
-});
+    return true;
+}
