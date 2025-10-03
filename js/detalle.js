@@ -9,7 +9,7 @@ export function cargarDetalleProducto() {
     if (producto && contenedor) {
         contenedor.innerHTML = `
             <h2>${producto.nombre}</h2>
-            <img src="../${producto.imagen}" alt="${producto.nombre}">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
             <p><strong>Precio:</strong> $${producto.precio}</p>
             <p><strong>Stock:</strong> ${producto.stock}</p>
         `;
