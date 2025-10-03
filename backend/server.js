@@ -1,11 +1,13 @@
 const express = require("express")
 const app = express()
 
-require('dotenv').config();
-const PORT = process.env.PORT || 3000
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`)
-})
+// Middleware global para loguear cada petición
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
+app.use(express.json());
 
 const { infoRouter } = require("./routes/info")
 app.use("/", infoRouter)
@@ -31,6 +33,8 @@ app.use((err, req, res, next) => {
     })
 })
 
+require('dotenv').config();
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`server escuchando ${PORT}`)
 })
