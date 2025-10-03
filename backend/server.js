@@ -1,11 +1,8 @@
 const express = require("express")
 const app = express()
 
-// Middleware global para loguear cada petición
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  next();
-});
+const { loggerMiddleware } = require("./middlewares/logger")
+app.use(loggerMiddleware)
 
 app.use(express.json());
 
