@@ -23,3 +23,20 @@ El sitio incluye:
 - CSS3 (Flexbox, Mobile-First)  
 - JavaScript (DOM, Eventos, Arrays de Objetos)  
 - Git & GitHub  
+
+## 💻 Empezando a levantar el servidor 
+1. Instalar todas las dependencias necesarias (express, dotenv y nodemon) que están listadas en el archivo package.json. En la terminal, desde la carpeta MuebleriaJota/backend, ejecutar:
+   ```console
+   npm install
+   ```
+   
+2. Guardar configuración privada del puerto. Dentro de MuebleriaJota/backend, crear un archivo llamado .env y escribir adentro:
+   ```console
+   PORT=4000
+   ```
+   (Elegir cualquier número de puerto libre, por ejemplo 4000, 8080, etc. Si no se crea el archivo .env, el servidor usará por defecto el puerto 3000.)
+
+3. Iniciar el servidor en modo desarrollo con nodemon, que recarga automáticamente cuando hacés cambios en el código:
+   ```python
+   npm run dev
+   ```
