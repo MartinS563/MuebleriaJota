@@ -1,5 +1,4 @@
 // CATÁLOGO 
-import { productos } from "./productos.js";
 import { cargarCatalogo } from "./catalogo.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
