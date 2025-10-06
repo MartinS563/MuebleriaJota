@@ -136,6 +136,8 @@ input[type="text"], input[type="email"], textarea {
   margin-bottom: 30px;
   line-height: 1.6;
   border-radius: 10px;
+  background-color: var(--color-grey);
+  color: var(--color-darkwood)
 }
 
 button {
