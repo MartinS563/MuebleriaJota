@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../../css/contacto.css";
+import "../styles/contacto.css";
 
 export default function Contacto() {
   const [nombre, setNombre] = useState("");

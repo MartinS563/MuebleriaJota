@@ -1,5 +1,5 @@
-import productos from '../data/producto.json'
-import "../../../css/productos.css"
+import productos from '../../../backend/data/producto.json'
+import "../styles/productos.css"
 
 const ProductCard = ({ id, nombre, descripcion, precio, imagen }) => {
   const handleVerMas = () => {
