@@ -1,16 +1,24 @@
 const express = require("express")
 const app = express()
 
+require('dotenv').config();
+const PORT = process.env.PORT || 3000
+
 const { loggerMiddleware } = require("./middlewares/logger")
-app.use(loggerMiddleware)
-
-app.use(express.json());
-
 const { infoRouter } = require("./routes/info")
-app.use("/", infoRouter)
-
 const { productosRouter } = require("./routes/productos")
+const userRoutes = require("./routes/user.routes")
+const authRoutes = require('./routes/auth.routes')
+const cors = require("cors")
+const { connectDB } = require("./data/db")
+
+app.use(cors())
+app.use(loggerMiddleware)
+app.use(express.json());
+app.use("/", infoRouter)
 app.use("/api/productos", productosRouter)
+app.use('/api/auth', authRoutes)
+app.use('/api/users', userRoutes);
 
 // Rutas no definidas
 app.use((req, res, next) => {
@@ -30,8 +38,15 @@ app.use((err, req, res, next) => {
     })
 })
 
-require('dotenv').config();
-const PORT = process.env.PORT || 3000
-app.listen(PORT, () => {
-    console.log(`server escuchando ${PORT}`)
+connectDB()
+    .then(() => {
+        console.log("Base de datos conectada")
+
+        app.listen(PORT, () => {
+            console.log(`server escuchando ${PORT}`)
+        });
+    })
+    .catch((error) => {
+        console.error("Error al conectar a la base de datos:", error);
+        process.exit(1);
 })

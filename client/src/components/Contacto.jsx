@@ -1,39 +1,82 @@
 import { useState } from "react";
 import "../styles/contacto.css";
+import {Formik, Form, Field, ErrorMessage} from 'Formik';
+import * as yup from 'yup';
 
-export default function Contacto() {
-  const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
-  const [mensaje, setMensaje] = useState("");
+const schema = yup.object().shape({
+  nombre: yup
+  .string().required("El nombre es obligatorio"),
+  email: yup
+  .string().email("Correo electrónico inválido")
+  .required("El email es obligatorio"),
+  mensaje: yup
+  .string().required("El mensaje es obligatorio"),
+});
 
-  const handleSubmit = (e) => {
+function Contacto() {
+  const [formData, setFormData] = useState({
+    nombre:'',
+    email:'',
+    mensaje:'',
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log("datos:", formData)
 
     let errores = [];
 
     // Validación de nombre
-    if (!nombre.trim()) errores.push("Nombre no completado.");
-    else if (nombre.trim().length < 3)
+    if (!formData.nombre.trim()) errores.push("Nombre no completado.");
+    else if (formData.nombre.trim().length < 3)
       errores.push("El nombre debe tener al menos 3 caracteres.");
 
     // Validación de email
-    if (!email.trim()) errores.push("Email no completado.");
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
+    if (!formData.email.trim()) errores.push("Email no completado.");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim()))
       errores.push("Correo electrónico inválido.");
 
     // Validación de mensaje
-    if (!mensaje.trim()) errores.push("Mensaje no completado.");
+    if (!formData.mensaje.trim()) errores.push("Mensaje no completado.");
 
     if (errores.length > 0) {
       alert(errores.join("\n"));
       return;
     }
 
-alert("¡Gracias! Su consulta fue enviada con éxito. \nNos pondremos en contacto a la brevedad.");
+    try {
+      const response = await fetch('https://api.ejemplo.com/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error('El registro falló.');
+      }
+
+      const result = await response.json();
+      alert(`¡Gracias ${result.nombre} ! Su consulta fue enviada con éxito. \nNos pondremos en contacto a la brevedad.`);
+      // Limpiar el formulario después del envío
+      setFormData({ nombre: '', email: '', mensaje: '' });
+ 
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
-    <section>
+    <>
       <h1 id="titulo-contacto">ENVIAR UNA CONSULTA</h1>
       <h4 className="subtitulo-contacto">
         Estamos aquí para escucharte y acompañarte, con la misma dedicación con
@@ -51,8 +94,8 @@ alert("¡Gracias! Su consulta fue enviada con éxito. \nNos pondremos en contact
             type="text"
             id="nombreUsuario"
             name="nombre"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
+            value={formData.nombre}
+            onChange={handleChange}
           />
         </div>
 
@@ -62,8 +105,8 @@ alert("¡Gracias! Su consulta fue enviada con éxito. \nNos pondremos en contact
             type="text"
             id="emailUsuario"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
 
@@ -73,13 +116,15 @@ alert("¡Gracias! Su consulta fue enviada con éxito. \nNos pondremos en contact
             id="mensajeUsuario"
             name="mensaje"
             rows="5"
-            value={mensaje}
-            onChange={(e) => setMensaje(e.target.value)}
+            value={formData.mensaje}
+            onChange={handleChange}
           />
         </div>
 
         <button type="submit">ENVIAR</button>
       </form>
-    </section>
+    </>
   );
 }
+
+export default Contacto

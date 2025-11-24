@@ -1,14 +1,40 @@
 import React from "react";
+import {Link} from "react-router-dom"
+import { useAuthContext } from "../context/AuthContext";
 
-const NavBar = ({ handlerCatalogo, handlerCarrito, handlerContacto }) => {
+const NavBar = () => {
+  const {user, logout} = useAuthContext()
+  const handleLogout = () => {
+    // toast.error("Acabas de cerrar tu sesión.")
+    logout()
+  }
+
   return (
-    <>
-      <nav>
-        <button onClick={handlerCatalogo}>Catálogo</button>
-        <button onClick={handlerCarrito}>Carrito</button>
-        <button onClick={handlerContacto}>Contacto</button>
-      </nav>
-    </>
+    <nav>
+      {user ? (
+        <>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/register">Crear usuarios</Link></li>
+          <li> <button onClick={handleLogout}>Logout</button></li>
+        </ul>
+          <span>Hola {user.nombre}!</span>
+         
+        </>
+      ) : (
+        <>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/register">Crear Usuarios</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="catalog">Catálogo</Link></li>
+          {/* <li><Link to="cart">Carrito</Link></li> */}
+          <li><Link to="contact">Contacto</Link></li>
+        </ul>
+          
+        </>
+      )}
+    </nav>
   );
 };
 
